@@ -1,0 +1,95 @@
+/* Konkan Coast theme for Waybar — indigo night, teal sea, amber lighthouse */
+
+* {
+  font-family: "JetBrainsMono Nerd Font", "Noto Sans", sans-serif;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: #10141C;
+  color: #EDEFF5;
+  border-radius: 10px;
+  border: 1px solid #2A3040;
+}
+
+#workspaces {
+  background: #171C27;
+  border-radius: 8px;
+  margin: 4px;
+  padding: 0 6px;
+}
+
+#workspaces button {
+  color: #8A94AC;
+  padding: 0 8px;
+  border-radius: 6px;
+}
+
+#workspaces button.active {
+  color: #E0A63E;
+  background: #1E2433;
+}
+
+#workspaces button:hover {
+  background: #232A3B;
+  color: #EDEFF5;
+}
+
+#custom-menu {
+  color: #4C5FD5;
+  padding: 0 10px;
+  margin: 4px 0;
+}
+
+#clock {
+  background: #171C27;
+  color: #E0A63E;
+  border-radius: 8px;
+  padding: 0 14px;
+  margin: 4px 0;
+  font-weight: 600;
+}
+
+#network,
+#pulseaudio,
+#battery,
+#tray {
+  background: #171C27;
+  border-radius: 8px;
+  padding: 0 10px;
+  margin: 4px 2px;
+  color: #EDEFF5;
+}
+
+#network {
+  color: #2F9E8F;
+}
+
+#network.disconnected {
+  color: #E0555C;
+}
+
+#pulseaudio {
+  color: #4C5FD5;
+}
+
+#pulseaudio.muted {
+  color: #8A94AC;
+}
+
+#battery {
+  color: #4CAF7D;
+}
+
+#battery.warning {
+  color: #E0A63E;
+}
+
+#battery.critical {
+  color: #E0555C;
+}
+
+#tray {
+  color: #EDEFF5;
+}
