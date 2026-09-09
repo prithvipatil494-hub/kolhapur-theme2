@@ -1,0 +1,39 @@
+# Kolhapur Theme — Color Palette
+# Inspired by: Kolhapuri chappal leather, Mahalaxmi Temple brass/gold,
+# Panhala fort stonework, and Rankala Lake's deep green water.
+
+[palette]
+background      = "#1C1210"  # deep leather-brown, near black
+surface         = "#241813"  # slightly lifted panel background
+surface-alt     = "#2E1F18"  # hover / secondary panel
+
+maroon          = "#7B2323"  # Kolhapuri chappal red-maroon
+maroon-bright   = "#A83232"  # brighter maroon for active states
+
+gold            = "#C98A2C"  # temple brass / turmeric-gold
+gold-bright     = "#E0A83F"  # highlight gold
+
+teal            = "#2F6E5E"  # Rankala Lake green-teal
+teal-bright     = "#3E8E77"
+
+stone           = "#8A7863"  # Panhala fort stone
+cream           = "#F1E7D0"  # primary text, warm off-white
+muted           = "#B8A98F"  # secondary/dim text
+
+red             = "#B33A3A"  # errors / urgent
+green           = "#6E8F4F"  # success (banyan leaf green)
+yellow          = "#D4A017"  # warnings
+
+[roles]
+background      = "background"
+foreground      = "cream"
+foreground-dim  = "muted"
+primary         = "maroon"
+primary-bright  = "maroon-bright"
+accent          = "gold"
+accent-bright   = "gold-bright"
+secondary       = "teal"
+border          = "stone"
+error           = "red"
+success         = "green"
+warning         = "yellow"

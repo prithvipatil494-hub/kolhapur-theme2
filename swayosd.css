@@ -1,0 +1,25 @@
+/* Kolhapur Theme — SwayOSD */
+
+window {
+    background: #1C1210;
+    border: 2px solid #C98A2C;
+    border-radius: 14px;
+}
+
+image {
+    color: #E0A83F;
+}
+
+progressbar trough {
+    background: #241813;
+    border-radius: 8px;
+}
+
+progressbar progress {
+    background: #7B2323;
+    border-radius: 8px;
+}
+
+label {
+    color: #F1E7D0;
+}

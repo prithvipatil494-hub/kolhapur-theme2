@@ -1,0 +1,33 @@
+# Kolhapur Theme — Alacritty
+
+[colors.primary]
+background = "#1C1210"
+foreground = "#F1E7D0"
+
+[colors.cursor]
+text = "#1C1210"
+cursor = "#E0A83F"
+
+[colors.normal]
+black   = "#241813"
+red     = "#B33A3A"
+green   = "#6E8F4F"
+yellow  = "#D4A017"
+blue    = "#3E8E77"
+magenta = "#A83232"
+cyan    = "#2F6E5E"
+white   = "#B8A98F"
+
+[colors.bright]
+black   = "#2E1F18"
+red     = "#C94A4A"
+green   = "#7EA35F"
+yellow  = "#E0A83F"
+blue    = "#4E9E87"
+magenta = "#C98A2C"
+cyan    = "#3E8E77"
+white   = "#F1E7D0"
+
+[colors.selection]
+text = "#1C1210"
+background = "#C98A2C"
