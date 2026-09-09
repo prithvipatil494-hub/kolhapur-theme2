@@ -1,12 +1,12 @@
 /* Kolhapur Theme — Waybar */
 
 * {
-    /* Devanagari fallback added so Marathi text actually renders
-       (JetBrainsMono Nerd Font has no Marathi glyphs) */
     font-family: "JetBrainsMono Nerd Font", "Noto Sans Devanagari", sans-serif;
     font-size: 13px;
+    min-height: 0;
     border: none;
     border-radius: 0;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 window#waybar {
@@ -15,52 +15,189 @@ window#waybar {
     border-bottom: 2px solid #7B2323;
 }
 
+/* ---------- Left: logo + workspaces ---------- */
+
+#custom-omarchy {
+    padding: 0 12px;
+    color: #E0A83F;
+    font-size: 15px;
+}
+#custom-omarchy:hover {
+    background: #2E1F18;
+}
+
+#workspaces {
+    background: #241813;
+    margin: 3px 4px;
+    padding: 1px;
+    border-radius: 8px;
+}
 #workspaces button {
     padding: 0 8px;
     color: #B8A98F;
     background: transparent;
+    border-radius: 6px;
 }
-
 #workspaces button.active {
     color: #F1E7D0;
     background: #7B2323;
-    border-radius: 6px;
 }
-
+#workspaces button.hovered,
 #workspaces button:hover {
     background: #2E1F18;
-    border-radius: 6px;
+    color: #F1E7D0;
+}
+#workspaces button.urgent {
+    background: #B33A3A;
+    color: #F1E7D0;
 }
 
-#clock,
-#battery,
+/* ---------- Center: date + status indicators ----------
+   These are mostly icon-only, script-driven, and often blank when
+   inactive — so they get minimal padding, no heavy chip background,
+   and just shift color when a state class is present. Adjust the
+   class names below (.active / .recording etc.) if your scripts in
+   ~/.config/waybar/scripts and $OMARCHY_PATH/default/waybar/indicators
+   emit different class strings — I'm going by common Omarchy convention,
+   not the script source itself. */
+
+#custom-marathi-date {
+    padding: 0 10px;
+    margin: 3px 2px;
+    background: #241813;
+    border-radius: 8px;
+    color: #E0A83F;
+    font-weight: bold;
+}
+
+#custom-weather,
+#custom-update,
+#custom-voxtype,
+#custom-screenrecording-indicator,
+#custom-idle-indicator,
+#custom-notification-silencing-indicator {
+    padding: 0 6px;
+    color: #B8A98F;
+}
+#custom-weather:hover,
+#custom-update:hover,
+#custom-voxtype:hover {
+    color: #F1E7D0;
+}
+
+/* update badge should read as "something needs attention" */
+#custom-update {
+    color: #E0A83F;
+}
+
+/* voxtype: idle vs actively recording/transcribing should be unmistakable */
+#custom-voxtype.recording {
+    color: #B33A3A;
+}
+#custom-voxtype.transcribing {
+    color: #6FBFA8;
+}
+
+/* toggle-style indicators: dim by default, accent when the thing is "on" */
+#custom-screenrecording-indicator.active {
+    color: #B33A3A;
+}
+#custom-idle-indicator.active {
+    color: #6FBFA8;
+}
+#custom-notification-silencing-indicator.active {
+    color: #8A7863;
+}
+
+/* ---------- Right: tray, connectivity, system ---------- */
+
+#tray-expander {
+    background: #241813;
+    margin: 3px 4px 3px 0;
+    padding: 0 4px;
+    border-radius: 8px;
+}
+#custom-expand-icon {
+    padding: 0 6px;
+    color: #B8A98F;
+}
+#custom-expand-icon:hover {
+    color: #F1E7D0;
+}
+#tray {
+    padding: 0 4px;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #7B2323;
+    border-radius: 4px;
+}
+
+#bluetooth,
 #network,
 #pulseaudio,
 #cpu,
-#memory,
-#tray,
-#custom-marathi-date {
+#battery {
     padding: 0 10px;
     margin: 3px 2px;
     background: #241813;
     border-radius: 8px;
     color: #F1E7D0;
 }
-
-#clock,
-#custom-marathi-date {
-    color: #E0A83F;
-    font-weight: bold;
+#bluetooth:hover,
+#network:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#battery:hover {
+    background: #2E1F18;
 }
 
-#battery.warning {
-    color: #D4A017;
+#bluetooth {
+    color: #6FBFA8;
 }
 
-#battery.critical {
-    color: #B33A3A;
+/* your Marathi network strings are long — give network a bit more room
+   so "जोडलेले नाही" doesn't get clipped or force the bar taller */
+#network {
+    min-width: 90px;
+    color: #6FBFA8;
 }
-
 #network.disconnected {
     color: #B33A3A;
+    background: #2E1414;
+}
+
+#pulseaudio.muted {
+    color: #8A7863;
+}
+
+#battery {
+    color: #F1E7D0;
+}
+#battery.charging {
+    color: #6FBFA8;
+}
+#battery.warning:not(.charging) {
+    color: #D4A017;
+}
+#battery.critical:not(.charging) {
+    color: #F1E7D0;
+    background: #B33A3A;
+    animation: blink-critical 1.5s linear infinite;
+}
+@keyframes blink-critical {
+    to { background-color: #7B2323; }
+}
+
+tooltip {
+    background: #241813;
+    border: 1px solid #7B2323;
+    border-radius: 8px;
+    padding: 6px;
+}
+tooltip label {
+    color: #F1E7D0;
 }
