@@ -1,7 +1,9 @@
 /* Kolhapur Theme — Waybar */
 
 * {
-    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    /* Devanagari fallback added so Marathi text actually renders
+       (JetBrainsMono Nerd Font has no Marathi glyphs) */
+    font-family: "JetBrainsMono Nerd Font", "Noto Sans Devanagari", sans-serif;
     font-size: 13px;
     border: none;
     border-radius: 0;
@@ -36,7 +38,8 @@ window#waybar {
 #pulseaudio,
 #cpu,
 #memory,
-#tray {
+#tray,
+#custom-marathi-date {
     padding: 0 10px;
     margin: 3px 2px;
     background: #241813;
@@ -44,7 +47,8 @@ window#waybar {
     color: #F1E7D0;
 }
 
-#clock {
+#clock,
+#custom-marathi-date {
     color: #E0A83F;
     font-weight: bold;
 }
